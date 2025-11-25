@@ -44,6 +44,10 @@ html {
 }
 section {
   padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  height: 100vh;
 }
 section .infos {
   display: flex;
@@ -54,4 +58,25 @@ section .infos {
   padding: var(--space-sm) var(--space-md);
   border: 1px solid var(--border-primary-color);
   border-radius: var(--border-radius-sm);
+}
+.board {
+  border: 1px solid var(--border-primary-color);
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
+}
+.block {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border-primary-color);
+}
+
+@media (min-width: 480px) {
+  section {
+    font-size: 12px;
+  }
+  .infos {
+    gap: var(--border-radius-lg);
+  }
 }
